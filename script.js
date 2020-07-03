@@ -20,5 +20,28 @@ fetch(url).then(function(res) {
 
 function createQuestion() {
     nx.style.display = "none";
+    message.textContent = 'Question #'+(game.val+1)+ ' out of '+game.total;
+    output.innerHTML = '';
+    console.log(game);
+    let q = game.arr[game.val];
+    console.log(q);
+    const main = document.createElement('div');
+    main.textContent = q.question+'?';
+
+    output.appendChild(main);
+
+    q.opt.forEach(function(el) {
+        console.log(el);
+        let span = document.createElement('span');
+        span.textContent = el;
+        output.appendChild(span);
+        span.ans = q.answer;
+        span.addEventListener('click', checker);
+    });
+}
+
+function checker(e) {
+    console.log(e.target.ans);
+    console.log(this.ans);
 }
 
