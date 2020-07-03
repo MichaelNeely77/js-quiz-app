@@ -43,5 +43,16 @@ function createQuestion() {
 function checker(e) {
     console.log(e.target.ans);
     console.log(this.ans);
+
+    let sel = e.target;
+    console.log(sel.textContent);
+    if(sel.textContent == sel.ans) {
+        console.log('correct');
+    } else {
+        console.log('wrong')
+    }
+
+    game.val++;
+    nx.style.display = 'block';
 }
 
