@@ -32,19 +32,29 @@ function createQuestion() {
         console.log(q);
         const main = document.createElement('div');
         main.textContent = q.question+'?';
+        main.classList.add('question');
 
         output.appendChild(main);
 
-            q.opt.forEach(function(el) {
+        arrayRandom(q.opt);
+
+        q.opt.forEach(function(el) {
         console.log(el);
         let span = document.createElement('span');
         span.textContent = el;
         span.classList.add('answer');
+        span.classList.add('btn');
         output.appendChild(span);
         span.ans = q.answer;
         span.addEventListener('click', checker);
         });
     }
+}
+
+function arrayRandom(arr) {
+    arr.sort(function() {
+        return .5 - Math.random();
+    });
 }
 
 function checker(e) {
