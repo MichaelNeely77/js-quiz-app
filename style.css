@@ -2,6 +2,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
 .next {
     font-size: 1em;
     background-color: red;
